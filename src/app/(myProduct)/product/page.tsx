@@ -1,11 +1,12 @@
-import MySplitter from "@/app/components/lazyparctices/Splitter";
+import ProductTable from "@/app/components/ProductComponents/ProductTable";
+
 
 
 
     const Product = () => {
     return (
-        <div>
-            <MySplitter/>
+        <div className="p-4">
+            <ProductTable/>
         </div>
     )
     }
