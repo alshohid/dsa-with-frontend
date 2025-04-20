@@ -1,9 +1,10 @@
     "use client";
     import { initialProducts } from "@/app/helperData/productNavData/ProductNavData";
     import { useMemo, useState } from "react";
-    import { Table, Input, Select } from "antd";
+    import { Table, Input, Select, Watermark } from "antd";
     import {brandOptionValue} from "@/app/helperData/productNavData/ProductNavData"
     import {categoryOptionValue} from "@/app/helperData/productNavData/ProductNavData"
+    import WaterMark from "../lazyparctices/WaterMark";
 
     const { Search } = Input;
     const { Option } = Select;
@@ -59,7 +60,8 @@
 
     return (
     <div>
-        <div className="flex flex-wrap mb-5 gap-4">
+        <WaterMark>
+            <div className="flex flex-wrap mb-5 gap-4">
             <Search
                 placeholder="Search by name"
                 onChange={(e) => setSearchText(e.target.value)}
@@ -97,6 +99,7 @@
             columns={columns}
             pagination={{ pageSize: 10 }}
         />
+        </WaterMark>
         </div>
     );
     };
