@@ -1,0 +1,32 @@
+version: '3'
+
+services:
+  app:
+    container_name: dsa-frontend
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+    ports:
+      - "3000:3000"
+      - "9229:9229" 
+    environment:
+      - NODE_ENV=development
+      - PORT=3000
+      - NEXT_TELEMETRY_DISABLED=1
+      - HOST=0.0.0.0
+    restart: unless-stopped
+    volumes:
+      - ./:/app:rw
+      - next_cache:/app/.next
+      - node_modules:/app/node_modules
+    init: true
+    healthcheck:
+      test: ["CMD", "wget", "--spider", "http://localhost:3000"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+      start_period: 10s
+
+volumes:
+  next_cache:
+  node_modules:
