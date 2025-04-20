@@ -44,7 +44,6 @@
         </Header>
 
         <Layout>
-            {/* Mobile Drawer */}
             <Drawer
             placement="left"
             closable
@@ -56,7 +55,6 @@
             <ProductSideNav />
             </Drawer>
 
-            {/* Desktop Sider */}
             {!isMobile && (
             <Sider width={256} style={siderStyle}>
                 <ProductSideNav />
