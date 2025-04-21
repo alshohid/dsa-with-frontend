@@ -65,13 +65,13 @@
             <Search
                 placeholder="Search by name"
                 onChange={(e) => setSearchText(e.target.value)}
-                style={{width:330}}
+                style={{flex:"1 1 300px"}}
             />
             <Select
                 placeholder="Filter by category"
                 allowClear
                 onChange={(value) => setFilterCategory(value)}
-                style={{width:330}}
+                style={{flex:"1 1 300px"}}
             >
                 {categoryOptionValue.map((item) => (
                 <Option key={item.value} value={item.value}>
@@ -83,7 +83,7 @@
                 placeholder="Filter by brand"
                 allowClear
                 onChange={(value) => setsetFilterBybrand(value)}
-                style={{width:330}}
+                style={{flex:"1 1 300px"}}
             >
                 {brandOptionValue.map((item) => (
                 <Option key={item.name} value={item.name}>
